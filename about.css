@@ -1,0 +1,225 @@
+/* about.css */
+
+/* Overall Layout */
+.about-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Playfair Display', serif;
+
+    position: relative;
+    top: -135px;  /* Adjust this value to move the container up */
+     
+}
+
+/* Hero Section */
+.hero-about {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #1D2951;
+    color: #FFFFFF;
+    border-radius: 7px;
+    margin-bottom: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-about h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 4px;
+    margin-top: 1px;
+}
+
+.hero-about p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@keyframes moveBg {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Section Styling */
+.brand-story {
+    margin-top: 40px;
+    padding: 40px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    line-height: 1.8;
+}
+
+.brand-story h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #00468B;
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #66B2FF;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+.brand-story p {
+    font-size: 1.1rem;
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+.brand-story ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.brand-story li {
+    font-size: 1rem;
+    color: #333333;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    position: relative;
+}
+
+.brand-story li::before {
+    content: '✔';
+    color: #38c42e;
+    font-size: 1.2rem;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Smooth Animations */
+.brand-story h2,
+.brand-story p,
+.brand-story li {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.brand-story h2 {
+    animation-delay: 0.1s;
+}
+
+.brand-story p {
+    animation-delay: 0.2s;
+}
+
+.brand-story li:nth-child(1) { animation-delay: 0.3s; }
+.brand-story li:nth-child(2) { animation-delay: 0.4s; }
+.brand-story li:nth-child(3) { animation-delay: 0.5s; }
+.brand-story li:nth-child(4) { animation-delay: 0.6s; }
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-about h1 {
+        font-size: 2.5rem;
+    }
+
+    .brand-story h2 {
+        font-size: 2rem;
+    }
+}
+.logo-img {
+    width: 80px; /* Adjust the width as needed */
+    height: 6070px; /* Maintain the aspect ratio */
+    max-height: 100px; /* Optional: Limit the maximum height */
+  }
+  .management-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    width:100%; /* Ensures it takes full width */
+}
+
+.management-box {
+    background-color: #F7F7F7;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    width:35%; /* Ensures it takes full width */
+}
+
+.management-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.management-box:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #00468B;
+}
+
+.management-box .photo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #00468B;
+}
+
+.management-box .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.management-box h3 {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 1.5rem;
+    color: #00468B;
+    margin: 10px 0 5px;
+}
+
+.management-box p {
+    font-size: 1rem;
+    color: #666666;
+    line-height: 1.6;
+}
+
+.management-box p:nth-of-type(2) {
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #333333;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .management-boxes {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
